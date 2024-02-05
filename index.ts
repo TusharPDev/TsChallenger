@@ -21,4 +21,26 @@ console.log(`Sum of two numbers is ${result}`);
 // console.log(`Sum of two numbers is ${resultSecond}`);
 
 
+/** problem statement
+ * Given an array of numbers, return a new array containing only the even numbers.*/
+
+
+//here i've implemented the function type annotations!
+function filterEvenNumbers(numbers: number[]): number[] {
+  const arrayWithEvenNums:number[] = []
+  for(let i =0; i<numbers.length; i++){
+    if(numbers[i] % 2 === 0){
+      arrayWithEvenNums.push(numbers[i])
+    }
+  }
+  return arrayWithEvenNums
+}
+
+// Example usage:
+const inputArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const evenNumbers: number[] = filterEvenNumbers(inputArray);
+console.log(evenNumbers);
+
+
+
 
