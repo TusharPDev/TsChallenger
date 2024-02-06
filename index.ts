@@ -1,6 +1,7 @@
 import {filterEvenNumbers} from './challenge02'
 import {sumOfTwoNums} from './challenge01'
 import {arrayFilterFunel} from './challenge03'
+import {vowelExtracter} from './challenge04'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -26,6 +27,12 @@ const resultForNumOnlyArray:number[] = arrayFilterFunel(mixedTypeArray);
 //Expected output: [1,2,4,0.5]
 console.log("\n Array with Only numbers : -",resultForNumOnlyArray)
 
+//CHALLENGE04 function call
+//Example usage:
 
+const inputStr = "Hey arnold how are you";
 
+const resultForCountOfVowels = vowelExtracter(inputStr);
+
+console.log("number of vowels :-",resultForCountOfVowels)
 
