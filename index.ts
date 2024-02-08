@@ -3,6 +3,7 @@ import {sumOfTwoNums} from './challenge01'
 import {arrayFilterFunel} from './challenge03'
 import {vowelExtracter} from './challenge04'
 import {typeNarrower} from './challenge05'
+import {genre} from './challenge06'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -44,3 +45,8 @@ const resultForTypeNarrower = typeNarrower("Hey arnold how are you");
 //Expected output: Hey i am a string!
 
 //CHALLENGE06 function call:
+const actionMovie: thriller = { missionImpossible: () => "Mission Impossible was a mind-boggling movie" };
+const funnyMovie: comedy = { mrBean: () => "Wow! Felt nostalgic" };
+
+genre(actionMovie);
+genre(funnyMovie);
