@@ -2,6 +2,7 @@ import {filterEvenNumbers} from './challenge02'
 import {sumOfTwoNums} from './challenge01'
 import {arrayFilterFunel} from './challenge03'
 import {vowelExtracter} from './challenge04'
+import {typeNarrower} from './challenge05'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -36,3 +37,10 @@ const resultForCountOfVowels = vowelExtracter(inputStr);
 
 console.log("number of vowels :-",resultForCountOfVowels)
 
+
+//CHALLENGE05 function call: 
+const resultForTypeNarrower = typeNarrower("Hey arnold how are you");
+
+//Expected output: Hey i am a string!
+
+//CHALLENGE06 function call:
