@@ -1,13 +1,13 @@
 //The "in" operator
 
-type thriller = {missionImpossible: ()=> void};
-type comedy = {mrBean: ()=> void};
+export type thriller = { missionImpossible: () => string };
+export type comedy = { mrBean: () => string };
 
 
-function genre(choice: thriller | comedy){
-  if("missionImpossible" in choice){
+export const genre = (choice: thriller | comedy) => {
+  if ("missionImpossible" in choice) {
     return choice.missionImpossible();
-  }else{
-    choice.mrBean()
+  } else if("mrBean" in choice) {
+    return choice.mrBean();
   }
 }
