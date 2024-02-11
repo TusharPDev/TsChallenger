@@ -4,7 +4,9 @@ import { arrayFilterFunel } from './challenge03'
 import { vowelExtracter } from './challenge04'
 import { typeNarrower } from './challenge05'
 import { genre } from './challenge06'
-import {thriller,comedy} from './challenge06'
+import { thriller, comedy } from './challenge06'
+// import { Square, Circle, getArea } from './challenge07'
+import { Square, Circle, getArea } from './challenge07'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -52,3 +54,12 @@ const funnyMovie: comedy = { mrBean: () => "Wow! Felt nostalgic" };
 
 console.log(genre(actionMovie))
 console.log(genre(funnyMovie))
+
+//CHALLENGE07 function call:
+
+const square: Square = { kind: "square", size: 5 } 
+const circle: Circle = { kind: "circle", radius: 10 }
+
+console.log(getArea(square))//for square
+
+console.log(getArea(circle))//for circle
