@@ -1,3 +1,4 @@
+//Ex for Discriminated unions
 type Shape = Square | Circle;
 
 export interface Square {
