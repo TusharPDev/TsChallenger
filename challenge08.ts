@@ -21,3 +21,16 @@ export function move(direction: Direction) {
       break;
   }
 }
+
+
+//Ex.implement a function called safeParseJSON that takes a JSON string as input and attempts to parse it into a JavaScript object. However, if parsing fails due to invalid JSON syntax, the function should return an error message instead of throwing an error.
+
+export const safeParseJson = (jsonStr: string): string | object => {
+      try{
+        const parsedJson = JSON.parse(jsonStr)
+        return parsedJson; 
+      }
+      catch(error){
+        return "Error! Invalid Json Syntax :("
+      }
+  }

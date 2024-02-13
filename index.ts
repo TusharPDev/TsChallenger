@@ -7,7 +7,7 @@ import { genre } from './challenge06'
 import { thriller, comedy } from './challenge06'
 // import { Square, Circle, getArea } from './challenge07'
 import { Square, Circle, getArea } from './challenge07'
-import { move } from './challenge08'
+import { move, safeParseJson } from './challenge08'
 import { childFunction, parentFunction } from './challenge09'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
@@ -71,7 +71,17 @@ console.log(getArea(circle))//for circle
 const direction = 'up';
 move(direction);
 
+
+const parsedString = safeParseJson('{"name": "Tushar", "age" : 24}')
+const parsedString2 = safeParseJson('{"name": "Tushar", "age" :}')
+
+console.log("")
+console.log(parsedString)
+console.log("")
+console.log(parsedString2)
+
 //CHALLENGE09 function call:
 //Example usage:
 
 parentFunction(childFunction)
+
