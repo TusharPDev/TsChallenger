@@ -8,6 +8,7 @@ import { thriller, comedy } from './challenge06'
 // import { Square, Circle, getArea } from './challenge07'
 import { Square, Circle, getArea } from './challenge07'
 import { move } from './challenge08'
+import { childFunction, parentFunction } from './challenge09'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -69,3 +70,8 @@ console.log(getArea(circle))//for circle
 //Example usage:
 const direction = 'up';
 move(direction);
+
+//CHALLENGE09 function call:
+//Example usage:
+
+parentFunction(childFunction)
