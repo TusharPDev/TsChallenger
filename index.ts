@@ -7,7 +7,7 @@ import { genre } from './challenge06'
 import { thriller, comedy } from './challenge06'
 // import { Square, Circle, getArea } from './challenge07'
 import { Square, Circle, getArea } from './challenge07'
-import { move, safeParseJson } from './challenge08'
+import { move, safeParseJson, Todo, todoReducer } from './challenge08'
 import { childFunction, parentFunction } from './challenge09'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
@@ -68,17 +68,31 @@ console.log(getArea(circle))//for circle
 
 //Challege08 function call:
 //Example usage:
+//08Ex.1
 const direction = 'up';
 move(direction);
 
-
+//08Ex.2
 const parsedString = safeParseJson('{"name": "Tushar", "age" : 24}')
 const parsedString2 = safeParseJson('{"name": "Tushar", "age" :}')
-
 console.log("")
 console.log(parsedString)
 console.log("")
 console.log(parsedString2)
+
+
+//08Ex.3
+const initialState: Todo[] = [
+  { id: 1, text: "Task 1", isCompleted: false },
+  { id: 2, text: "Task 2", isCompleted: true },
+  { id: 3, text: "Task 3", isCompleted: false }
+];
+
+const todosFunctionsTesting = todoReducer(initialState,{type: 'Toggle_Todo', payload:{id:2}})
+
+console.log("todos list : -",todosFunctionsTesting)
+
+
 
 //CHALLENGE09 function call:
 //Example usage:
