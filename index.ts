@@ -8,7 +8,7 @@ import { thriller, comedy } from './challenge06'
 // import { Square, Circle, getArea } from './challenge07'
 import { Square, Circle, getArea } from './challenge07'
 import { move, safeParseJson, Todo, todoReducer } from './challenge08'
-import { childFunction, parentFunction, add } from './challenge09'
+import { childFunction, parentFunction, add, myConstructor } from './challenge09'
 import { log } from 'console'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
