@@ -8,7 +8,8 @@ import { thriller, comedy } from './challenge06'
 // import { Square, Circle, getArea } from './challenge07'
 import { Square, Circle, getArea } from './challenge07'
 import { move, safeParseJson, Todo, todoReducer } from './challenge08'
-import { childFunction, parentFunction } from './challenge09'
+import { childFunction, parentFunction, add } from './challenge09'
+import { log } from 'console'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -59,7 +60,7 @@ console.log(genre(funnyMovie))
 
 //CHALLENGE07 function call:
 
-const square: Square = { kind: "square", size: 5 } 
+const square: Square = { kind: "square", size: 5 }
 const circle: Circle = { kind: "circle", radius: 10 }
 
 console.log(getArea(square))//for square
@@ -88,14 +89,24 @@ const initialState: Todo[] = [
   { id: 3, text: "Task 3", isCompleted: false }
 ];
 
-const todosFunctionsTesting = todoReducer(initialState,{type: 'Toggle_Todo', payload:{id:2}})
+const todosFunctionsTesting = todoReducer(initialState, { type: 'Toggle_Todo', payload: { id: 2 } })
 
-console.log("todos list : -",todosFunctionsTesting)
+console.log("todos list : -", todosFunctionsTesting)
 
 
 
 //CHALLENGE09 function call:
-//Example usage:
+//Example usage:(Function Type Expressiion)
 
 parentFunction(childFunction)
 
+//Example usage:(Call Signature)
+
+const resultForAdd = add(3, 5);
+
+console.log(resultForAdd)
+
+
+//Example Usage(Construct signature)
+const instance = new myConstructor(1, 2)
+console.log(instance); // Output: MyClass { x: 1, y: 2 }
