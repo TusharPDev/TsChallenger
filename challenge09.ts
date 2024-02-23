@@ -29,3 +29,5 @@ export class Myclass{
 
 const mycContruct : myConstructor = Myclass
 
+
+//

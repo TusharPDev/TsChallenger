@@ -8,7 +8,7 @@ import { thriller, comedy } from './challenge06'
 // import { Square, Circle, getArea } from './challenge07'
 import { Square, Circle, getArea } from './challenge07'
 import { move, safeParseJson, Todo, todoReducer } from './challenge08'
-import { childFunction, parentFunction, add, myConstructor } from './challenge09'
+import { childFunction, parentFunction, add, myConstructor, Myclass } from './challenge09'
 import { log } from 'console'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
@@ -108,5 +108,6 @@ console.log(resultForAdd)
 
 
 //Example Usage(Construct signature)
-const instance = new myConstructor(1, 2)
+const mycContruct : myConstructor = Myclass
+const instance = new mycContruct(1, 2)
 console.log(instance); // Output: MyClass { x: 1, y: 2 }
