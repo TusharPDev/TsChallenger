@@ -9,6 +9,7 @@ import { thriller, comedy } from './challenge06'
 import { Square, Circle, getArea } from './challenge07'
 import { move, safeParseJson, Todo, todoReducer } from './challenge08'
 import { childFunction, parentFunction, add, myConstructor, Myclass } from './challenge09'
+import { formatName } from './challenge10'
 import { log } from 'console'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
@@ -108,6 +109,14 @@ console.log(resultForAdd)
 
 
 //Example Usage(Construct signature)
-const mycContruct : myConstructor = Myclass
+const mycContruct: myConstructor = Myclass
 const instance = new mycContruct(1, 2)
 console.log(instance); // Output: MyClass { x: 1, y: 2 }
+
+
+//Challange10 function call:
+//function overload signatures
+const fullName1 = formatName("John", "Doe"); // Should return "John Doe"
+const fullName2 = formatName("Alice", "Mary", "Smith"); // Should return "Alice Mary Smith"
+console.log(fullName1)
+console.log(fullName2)
