@@ -11,6 +11,7 @@ import { move, safeParseJson, Todo, todoReducer } from './challenge08'
 import { childFunction, parentFunction, add, myConstructor, Myclass } from './challenge09'
 import { formatName } from './challenge10'
 import { log } from 'console'
+import { genericFunctionOne } from './challenge10'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -120,3 +121,10 @@ const fullName1 = formatName("John", "Doe"); // Should return "John Doe"
 const fullName2 = formatName("Alice", "Mary", "Smith"); // Should return "Alice Mary Smith"
 console.log(fullName1)
 console.log(fullName2)
+
+//Challange 10b functiion call:
+const sampleArr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+const genericFuncOneRes = genericFunctionOne(sampleArr);
+
+console.log("Generic 1 : ", genericFuncOneRes)

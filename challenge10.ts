@@ -8,3 +8,8 @@ export function formatName(firstName: string, arg2: string, arg3?: string): stri
 }
 
 
+//Generic function 
+export const genericFunctionOne = <T>(array:T[]): T[] =>{
+  return array.reverse();
+}
+
