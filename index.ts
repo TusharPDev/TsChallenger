@@ -12,6 +12,7 @@ import { childFunction, parentFunction, add, myConstructor, Myclass } from './ch
 import { formatName } from './challenge10'
 import { log } from 'console'
 import { genericFunctionOne } from './challenge10'
+import { filterItems, Item } from './storageUtility'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -128,3 +129,15 @@ const sampleArr = [1, 2, 3, 4, 5, 6, 7, 8];
 const genericFuncOneRes = genericFunctionOne(sampleArr);
 
 console.log("Generic 1 : ", genericFuncOneRes)
+
+//Storage utility ex: 
+// Test the function
+const items: Item[] = [
+  { id: 1, name: "Item 1", quantity: 5, active: true },
+  { id: 2, name: "Item 2", quantity: 3, active: false },
+  { id: 3, name: "Item 3", quantity: 7, active: true }
+];
+
+// Filter active items
+const activeItems = filterItems(items, 'active', true);
+console.log("Storage Utility result: ",activeItems);
