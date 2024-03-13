@@ -10,9 +10,9 @@ import { Square, Circle, getArea } from './challenge07'
 import { move, safeParseJson, Todo, todoReducer } from './challenge08'
 import { childFunction, parentFunction, add, myConstructor, Myclass } from './challenge09'
 import { formatName } from './challenge10'
-import { log } from 'console'
 import { genericFunctionOne } from './challenge10'
 import { filterItems, Item } from './storageUtility'
+import { log, LogLevel, LogDestination } from './loggingUtility';
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -140,4 +140,9 @@ const items: Item[] = [
 
 // Filter active items
 const activeItems = filterItems(items, 'active', true);
-console.log("Storage Utility result: ",activeItems);
+console.log("Storage Utility result: ", activeItems);
+
+//logging utility ex:
+log('This is an info message');
+log('This is a warning message', 'warning');
+log('This is an error message', 'error', 'file', { timestamp: new Date(), userId: '123' });
