@@ -13,6 +13,7 @@ import { formatName } from './challenge10'
 import { genericFunctionOne } from './challenge10'
 import { filterItems, Item } from './storageUtility'
 import { log, LogLevel, LogDestination } from './loggingUtility';
+import { InventoryItemImpl } from './Inventory_management'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -146,3 +147,12 @@ console.log("Storage Utility result: ", activeItems);
 log('This is an info message');
 log('This is a warning message', 'warning');
 log('This is an error message', 'error', 'file', { timestamp: new Date(), userId: '123' });
+
+//Object type & property modiers: 
+// Example usage
+const item1 = new InventoryItemImpl(1, "Widget", 10, 5.99);
+console.log(item1);
+
+item1.id = 2; // Error: Cannot assign to 'id' because it is a read-only property.
+
+item1.price = 1; // Error: Price must be a positive number.
