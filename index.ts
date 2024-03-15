@@ -14,6 +14,7 @@ import { genericFunctionOne } from './challenge10'
 import { filterItems, Item } from './storageUtility'
 import { log, LogLevel, LogDestination } from './loggingUtility';
 import { InventoryItemImpl } from './Inventory_management'
+import createAccount, { CheckingAccount, InvestmentAccount, SavingsAccount } from './typeBuilderUtility'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -156,3 +157,45 @@ console.log(item1);
 item1.id = 2; // Error: Cannot assign to 'id' because it is a read-only property.
 
 item1.price = 1; // Error: Price must be a positive number.
+
+//typeBuilders Example: 
+// Example usage
+const savingsAccount: SavingsAccount = createAccount({
+  accountNumber: 'SAV123',
+  balance: 1000,
+  owner: 'Alice',
+  type: 'savings',
+  interestRate: 0.05
+});
+
+const checkingAccount: CheckingAccount = createAccount({
+  accountNumber: 'CHK456',
+  balance: 500,
+  owner: 'Bob',
+  type: 'checking',
+  overdraftLimit: 100
+});
+
+const investmentAccount: InvestmentAccount = createAccount({
+  accountNumber: 'INV789',
+  balance: 10000,
+  owner: 'Charlie',
+  type: 'investment',
+  investmentType: 'Stocks'
+});
+
+// This will throw an error because 'investmentType' is not a property of BaseAccount
+const invalidAccount: InvestmentAccount = createAccount({
+  accountNumber: 'INV999',
+  balance: 20000,
+  owner: 'David',
+  type: 'investment',
+  investmentType: 'Real Estate',
+  location: 'New York' // Error: Object literal may only specify known properties
+});
+
+console.log("saving account : ", savingsAccount)
+console.log("checking account : ", checkingAccount)
+console.log("investment account : ", investmentAccount)
+console.log("inavlid account : ", invalidAccount)
+
