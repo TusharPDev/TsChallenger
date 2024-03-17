@@ -15,6 +15,7 @@ import { filterItems, Item } from './storageUtility'
 import { log, LogLevel, LogDestination } from './loggingUtility';
 import { InventoryItemImpl } from './Inventory_management'
 import createAccount, { CheckingAccount, InvestmentAccount, SavingsAccount } from './typeBuilderUtility'
+import { Product, ProductFilter } from './productFilterUtility'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -199,3 +200,14 @@ console.log("checking account : ", checkingAccount)
 console.log("investment account : ", investmentAccount)
 console.log("inavlid account : ", invalidAccount)
 
+
+//Product filter ex:
+const products: Product[] = [
+  { name: 'iPhone 13', price: 999, brand: 'Apple', category: 'smartphone', screenSize: 6.1, has5G: true },
+  { name: 'Samsung Galaxy S21', price: 899, brand: 'Samsung', category: 'smartphone', screenSize: 6.2, has5G: true },
+  { name: 'MacBook Pro', price: 1299, brand: 'Apple', category: 'laptop', screenSize: 13.3, batteryLife: 10 },
+  { name: 'Dell XPS 15', price: 1499, brand: 'Dell', category: 'laptop', screenSize: 15.6, batteryLife: 12 }
+];
+
+const filteredProducts = ProductFilter.filter(products, { brand: 'Apple', category: 'laptop' });
+console.log(filteredProducts);
