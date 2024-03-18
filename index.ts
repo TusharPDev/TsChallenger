@@ -16,6 +16,7 @@ import { log, LogLevel, LogDestination } from './loggingUtility';
 import { InventoryItemImpl } from './Inventory_management'
 import createAccount, { CheckingAccount, InvestmentAccount, SavingsAccount } from './typeBuilderUtility'
 import { Product, ProductFilter } from './productFilterUtility'
+import { Customer, Order, Product_e } from './ecommerceUtility'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -211,3 +212,23 @@ const products: Product[] = [
 
 const filteredProducts = ProductFilter.filter(products, { brand: 'Apple', category: 'laptop' });
 console.log(filteredProducts);
+
+
+//e-commerce ex:
+const product1 = new Product_e(1, "Laptop", 999.99, 10);
+const product2 = new Product_e(2, "Smartphone", 699.99, 15);
+
+const customer = new Customer(1, "John Doe", "john@example.com", "123 Main St");
+
+const order = new Order(1, customer);
+order.addProduct(product1, 2);
+order.addProduct(product2, 1);
+console.log(order.products); 
+console.log(order.totalPrice); 
+
+order.removeProduct(1, 1);
+console.log(order.products);
+console.log(order.totalPrice); 
+
+order.checkout(); 
+
