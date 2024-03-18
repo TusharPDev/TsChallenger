@@ -29,7 +29,7 @@ export class Customer {
 export class Order {
   id: number;
   customer: Customer;
-  products: Product[];
+  products: Product_e[];
   totalPrice: number;
 
   constructor(id: number, customer: Customer) {
@@ -39,7 +39,7 @@ export class Order {
       this.totalPrice = 0;
   }
 
-   addProduct(product: Product, quantity: number) {
+   addProduct(product: Product_e, quantity: number) {
       const existingProduct = this.products.find(p => p.id === product.id);
       if (existingProduct) {
           existingProduct.quantity += quantity;
