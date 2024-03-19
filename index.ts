@@ -17,6 +17,7 @@ import { InventoryItemImpl } from './Inventory_management'
 import createAccount, { CheckingAccount, InvestmentAccount, SavingsAccount } from './typeBuilderUtility'
 import { Product, ProductFilter } from './productFilterUtility'
 import { Customer, Order, Product_e } from './ecommerceUtility'
+import { ExpenseTracker } from './expenseManagementUtility'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -232,3 +233,11 @@ console.log(order.totalPrice);
 
 order.checkout(); 
 
+//Expense tracker ex:
+const tracker = new ExpenseTracker();
+tracker.addExpense("Groceries", 50, new Date("2024-03-18"));
+tracker.addExpense("Dinner", 30, new Date("2024-03-17"));
+tracker.addExpense("Transportation", 20, new Date("2024-03-16"));
+
+console.log("Total Expenses:", tracker.totalExpenses);
+tracker.listExpenses();
