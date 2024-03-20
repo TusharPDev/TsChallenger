@@ -18,6 +18,7 @@ import createAccount, { CheckingAccount, InvestmentAccount, SavingsAccount } fro
 import { Product, ProductFilter } from './productFilterUtility'
 import { Customer, Order, Product_e } from './ecommerceUtility'
 import { ExpenseTracker } from './expenseManagementUtility'
+import { Car, VehicleCatalog, Bicycle } from './vehicleManagementUtility'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -224,14 +225,14 @@ const customer = new Customer(1, "John Doe", "john@example.com", "123 Main St");
 const order = new Order(1, customer);
 order.addProduct(product1, 2);
 order.addProduct(product2, 1);
-console.log(order.products); 
-console.log(order.totalPrice); 
+console.log(order.products);
+console.log(order.totalPrice);
 
 order.removeProduct(1, 1);
 console.log(order.products);
-console.log(order.totalPrice); 
+console.log(order.totalPrice);
 
-order.checkout(); 
+order.checkout();
 
 //Expense tracker ex:
 const tracker = new ExpenseTracker();
@@ -241,3 +242,17 @@ tracker.addExpense("Transportation", 20, new Date("2024-03-16"));
 
 console.log("Total Expenses:", tracker.totalExpenses);
 tracker.listExpenses();
+
+// Vehicle managemnt ex:
+const catalog = new VehicleCatalog();
+
+const car1 = new Car("Toyota", "Camry", 2020, 4);
+catalog.addVehicle(car1);
+
+const car2 = new Car("Honda", "Accord", 2019, 4);
+catalog.addVehicle(car2);
+
+const bike1 = new Bicycle("Giant", "Defy", 2021, "Aluminum");
+catalog.addVehicle(bike1);
+
+catalog.listAllVehicles();
