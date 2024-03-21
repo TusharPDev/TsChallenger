@@ -19,6 +19,7 @@ import { Product, ProductFilter } from './productFilterUtility'
 import { Customer, Order, Product_e } from './ecommerceUtility'
 import { ExpenseTracker } from './expenseManagementUtility'
 import { Car, VehicleCatalog, Bicycle } from './vehicleManagementUtility'
+import { AdditionCalculator, DivisionCalculator, MultiplicationCalculator, SubtractionCalculator } from './calculatorUtility'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -256,3 +257,20 @@ const bike1 = new Bicycle("Giant", "Defy", 2021, "Aluminum");
 catalog.addVehicle(bike1);
 
 catalog.listAllVehicles();
+
+//Calculator utility ex:
+const additionCalc = new AdditionCalculator();
+additionCalc.calculate(5, 3);
+console.log("Addition Result:", additionCalc.getResult());
+
+const subtractionCalc = new SubtractionCalculator();
+subtractionCalc.calculate(8, 2);
+console.log("Subtraction Result:", subtractionCalc.getResult());
+
+const multiplicationCalc = new MultiplicationCalculator();
+multiplicationCalc.calculate(4, 6);
+console.log("Multiplication Result:", multiplicationCalc.getResult());
+
+const divisionCalc = new DivisionCalculator();
+divisionCalc.calculate(9, 3);
+console.log("Division Result:", divisionCalc.getResult());

@@ -29,7 +29,9 @@ export class VehicleCatalog {
 export class Car extends VehicleCatalog {
   type = "Car";
   numDoors: number;
-
+  model: string; 
+  make: string; 
+  year: number; 
   constructor(make: string, model: string, year: number, numDoors: number) {
     super();
     this.make = make;
@@ -51,11 +53,14 @@ export class Car extends VehicleCatalog {
 export class Bicycle extends VehicleCatalog {
   type = "Bicycle";
   frameMaterial: string;
+  model: string; 
+  make: string; 
+  year: number; 
 
   constructor(make: string, model: string, year: number, frameMaterial: string) {
     super();
     this.make = make;
-    this.model = model;
+    this.model = model;  // Assign the 'model' property in the constructor
     this.year = year;
     this.frameMaterial = frameMaterial;
   }
