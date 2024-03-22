@@ -28,6 +28,11 @@ export class SubtractionCalculator extends Calculator {
   }
 }
 
+export class MultiplicationCalculator extends Calculator {
+  calculate(a: number, b: number): void {
+    this._result = a * b;
+  }
+}
 
 export class DivisionCalculator extends Calculator {
   calculate(a: number, b: number): void {
@@ -35,12 +40,5 @@ export class DivisionCalculator extends Calculator {
       throw new Error("Cannot divide by zero.");
     }
     this._result = a / b;
-  }
-}
-
-
-export class MultiplicationCalculator extends Calculator {
-  calculate(a: number, b: number): void {
-    this._result = a * b;
   }
 }

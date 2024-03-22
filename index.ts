@@ -20,6 +20,7 @@ import { Customer, Order, Product_e } from './ecommerceUtility'
 import { ExpenseTracker } from './expenseManagementUtility'
 import { Car, VehicleCatalog, Bicycle } from './vehicleManagementUtility'
 import { AdditionCalculator, DivisionCalculator, MultiplicationCalculator, SubtractionCalculator } from './calculatorUtility'
+import { GroceryItem, HouseholdItem } from './shoppingUtility'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -274,3 +275,14 @@ console.log("Multiplication Result:", multiplicationCalc.getResult());
 const divisionCalc = new DivisionCalculator();
 divisionCalc.calculate(9, 3);
 console.log("Division Result:", divisionCalc.getResult());
+
+
+
+//Shopping utility ex:
+const groceryItem = new GroceryItem("Apples", 5, "Fruits");
+groceryItem.showDetails(); // Output: Grocery Item: Apples, Quantity: 5, Category: Fruits
+groceryItem.markAsPurchased(); // Output: Apples has been purchased.
+
+const householdItem = new HouseholdItem("Trash Bags", 2, "Kitchen");
+householdItem.showDetails(); // Output: Household Item: Trash Bags, Quantity: 2, Location: Kitchen
+householdItem.markAsPurchased(); // Output: Trash Bags has been purchased.
