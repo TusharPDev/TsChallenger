@@ -21,6 +21,7 @@ import { ExpenseTracker } from './expenseManagementUtility'
 import { Car, VehicleCatalog, Bicycle } from './vehicleManagementUtility'
 import { AdditionCalculator, DivisionCalculator, MultiplicationCalculator, SubtractionCalculator } from './calculatorUtility'
 import { GroceryItem, HouseholdItem } from './shoppingUtility'
+import { Priority, Task, TaskManager } from './TaskManages'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -286,3 +287,21 @@ groceryItem.markAsPurchased(); // Output: Apples has been purchased.
 const householdItem = new HouseholdItem("Trash Bags", 2, "Kitchen");
 householdItem.showDetails(); // Output: Household Item: Trash Bags, Quantity: 2, Location: Kitchen
 householdItem.markAsPurchased(); // Output: Trash Bags has been purchased.
+
+
+//Task Manager utility ex:
+const taskManager = new TaskManager();
+
+taskManager.addTask("Buy groceries", Priority.MEDIUM);
+taskManager.addTask("Pay bills", Priority.HIGH);
+taskManager.addTask("Call plumber", Priority.LOW);
+
+console.log("Tasks before prioritization:");
+taskManager.viewTasks();
+
+taskManager.prioritizeTasks();
+
+console.log("\nTasks after prioritization:");
+taskManager.viewTasks();
+
+Task.showTotalTasks(); 
