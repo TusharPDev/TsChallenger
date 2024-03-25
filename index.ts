@@ -22,6 +22,7 @@ import { Car, VehicleCatalog, Bicycle } from './vehicleManagementUtility'
 import { AdditionCalculator, DivisionCalculator, MultiplicationCalculator, SubtractionCalculator } from './calculatorUtility'
 import { GroceryItem, HouseholdItem } from './shoppingUtility'
 import { Priority, Task, TaskManager } from './TaskManages'
+import { Candidate, isProductManager, isSoftwareEngineer, ProductManager, SoftwareEngineer } from './hiringManagementUtility'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -305,3 +306,24 @@ console.log("\nTasks after prioritization:");
 taskManager.viewTasks();
 
 Task.showTotalTasks(); 
+
+
+//Hiring Manager utility ex:
+const candidate1 = new SoftwareEngineer("John Doe", "john@example.com", 5);
+const candidate2 = new ProductManager("Jane Smith", "jane@example.com", 7);
+
+function processCandidate(candidate: Candidate) {
+    candidate.apply();
+    candidate.interview();
+
+    if (isSoftwareEngineer(candidate)) {
+        console.log(`${candidate.name} has ${candidate.yearsOfExperience} years of experience.`);
+    } else if (isProductManager(candidate)) {
+        console.log(`${candidate.name} has ${candidate.yearsOfExperience} years of experience.`);
+    }
+
+    candidate.hire();
+}
+
+processCandidate(candidate1);
+processCandidate(candidate2);
