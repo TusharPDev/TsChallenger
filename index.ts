@@ -23,6 +23,9 @@ import { AdditionCalculator, DivisionCalculator, MultiplicationCalculator, Subtr
 import { GroceryItem, HouseholdItem } from './shoppingUtility'
 import { Priority, Task, TaskManager } from './TaskManages'
 import { Candidate, isProductManager, isSoftwareEngineer, ProductManager, SoftwareEngineer } from './hiringManagementUtility'
+import { MeditationTask } from './TaskUtility/meditationTask'
+import { ExerciseTask } from './TaskUtility/exerciseTask'
+import { prioritizeTasks } from './TaskUtility/TaskManagerN'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -327,3 +330,13 @@ function processCandidate(candidate: Candidate) {
 
 processCandidate(candidate1);
 processCandidate(candidate2);
+
+
+///New Task Manager utility ex:
+const meditation = new MeditationTask("Morning meditation", 2, 15);
+const exercise = new ExerciseTask("Morning workout", 1, "yoga");
+
+const tasks: Task[] = [meditation, exercise];
+
+const prioritizedTasks = prioritizeTasks(tasks);
+prioritizedTasks.forEach(task => task.execute());
