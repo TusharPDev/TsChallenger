@@ -26,6 +26,7 @@ import { Candidate, isProductManager, isSoftwareEngineer, ProductManager, Softwa
 import { MeditationTask } from './TaskUtility/meditationTask'
 import { ExerciseTask } from './TaskUtility/exerciseTask'
 import { prioritizeTasks } from './TaskUtility/TaskManagerN'
+import { Employee } from './ERPUtility'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -340,3 +341,13 @@ const tasks: Task[] = [meditation, exercise];
 
 const prioritizedTasks = prioritizeTasks(tasks);
 prioritizedTasks.forEach(task => task.execute());
+
+
+//ERP utlity ex:
+const employee1 = new Employee("001", "John Doe", "Engineering", "Software Developer", 60000);
+employee1.displayInfo();
+
+console.log("Updating employee information...");
+employee1.position = "Senior Software Developer";
+employee1.salary = 75000;
+employee1.displayInfo();
