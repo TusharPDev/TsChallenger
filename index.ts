@@ -27,6 +27,7 @@ import { MeditationTask } from './TaskUtility/meditationTask'
 import { ExerciseTask } from './TaskUtility/exerciseTask'
 import { prioritizeTasks } from './TaskUtility/TaskManagerN'
 import { Employee } from './ERPUtility'
+import { Post, SocialMediaUtility, User } from './socialMediaUtility'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -351,3 +352,26 @@ console.log("Updating employee information...");
 employee1.position = "Senior Software Developer";
 employee1.salary = 75000;
 employee1.displayInfo();
+
+//Social media utility ex:
+const socialMedia = new SocialMediaUtility();
+
+//Here i am Adding a users
+const user1: User = { id: 1, username: 'user1', email: 'user1@example.com' };
+const user2: User = { id: 2, username: 'user2', email: 'user2@example.com' };
+socialMedia.addUser(user1);
+socialMedia.addUser(user2);
+
+// Here i am Adding a posts
+const post1: Post = { id: 1, userId: 1, content: 'Post 1 content', likes: 0, comments: [] };
+const post2: Post = { id: 2, userId: 2, content: 'Post 2 content', likes: 0, comments: [] };
+socialMedia.addPost(post1);
+socialMedia.addPost(post2);
+
+// implementation for Liking a post
+socialMedia.likePost({ userId: 2, postId: 1 });
+console.log(socialMedia.getAllPosts());
+
+// Comment on a post
+socialMedia.commentOnPost({ id: 1, userId: 1, postId: 2, content: 'Comment on Post 2' });
+console.log(socialMedia.getCommentsForPost(2));
