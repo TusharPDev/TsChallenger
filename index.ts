@@ -28,6 +28,7 @@ import { ExerciseTask } from './TaskUtility/exerciseTask'
 import { prioritizeTasks } from './TaskUtility/TaskManagerN'
 import { Employee } from './ERPUtility'
 import { Post, SocialMediaUtility, User } from './socialMediaUtility'
+import { Stock, StockSuggestor } from './stockSuggestorUtility'
 //CHALLENGE01 function call
 //const result = sumOfTwoNums({ num1: 5, num2: "20" });
 //👆 above line throws error and so we there will be no index.js generated cause we've turned noEmitOnError to true.
@@ -375,3 +376,15 @@ console.log(socialMedia.getAllPosts());
 // Comment on a post
 socialMedia.commentOnPost({ id: 1, userId: 1, postId: 2, content: 'Comment on Post 2' });
 console.log(socialMedia.getCommentsForPost(2));
+
+
+//STOCK SUGGESTOR UTILITY EX:
+const stocks: Stock[] = [
+  { symbol: 'AAPL', price: 150, PE_ratio: 30, dividend_yield: 0.02, market_cap: 2000000000000, volume: 5000000, evaluatedAt: new Date('2024-04-10T08:00:00') },
+  { symbol: 'GOOGL', price: 2800, PE_ratio: 25, dividend_yield: 0.01, market_cap: 1500000000000, volume: 3000000, evaluatedAt: new Date('2024-04-10T08:10:00') },
+  { symbol: 'MSFT', price: 300, PE_ratio: 35, dividend_yield: 0.015, market_cap: 1800000000000, volume: 4000000, evaluatedAt: new Date('2024-04-10T08:20:00') },
+];
+
+const { bestStock, timespan } = StockSuggestor.suggestBestStock(stocks);
+console.log('Best stock suggestion:', bestStock);
+console.log('Timespan for which it remained top:', timespan, 'milliseconds');
